@@ -1,0 +1,5 @@
+read /workspace/OpenROAD-flow-scripts/flow/internal.blif;strash;rewrite;refactor -z;rewrite -z;refactor;rewrite -z;resub -K 8;resub -K 8;rewrite;refactor -z;refactor;dc2;dc2;strash;ifraig;dch -f;strash;print_stats;
+read /workspace/OpenROAD-flow-scripts/flow/internal.blif;strash;rewrite;rewrite;refactor -z;resub -K 8;dc2;refactor -z;rewrite -z;resub -K 8;refactor;refactor;dc2;rewrite -z;strash;ifraig;dch -f;strash;print_stats;
+read /workspace/OpenROAD-flow-scripts/flow/internal.blif;strash;rewrite;dc2;resub -K 8;refactor -z;dc2;refactor;rewrite -z;rewrite -z;resub -K 8;refactor;rewrite;refactor -z;strash;ifraig;dch -f;strash;print_stats;
+read /workspace/OpenROAD-flow-scripts/flow/internal.blif;strash;rewrite;dc2;refactor -z;dc2;refactor;rewrite;refactor -z;rewrite -z;resub -K 8;rewrite -z;refactor;resub -K 8;strash;ifraig;dch -f;strash;print_stats;
+read /workspace/OpenROAD-flow-scripts/flow/internal.blif;strash;rewrite;refactor -z;dc2;refactor -z;refactor;rewrite -z;resub -K 8;refactor;rewrite;dc2;resub -K 8;rewrite -z;strash;ifraig;dch -f;strash;print_stats;

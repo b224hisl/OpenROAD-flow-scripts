@@ -66,14 +66,14 @@
 # DESIGN_CONFIG=./designs/sky130hs/jpeg/config.mk
 # DESIGN_CONFIG=./designs/sky130hs/riscv32i/config.mk
 
-# DESIGN_CONFIG=./designs/asap7/gcd/config.mk
+DESIGN_CONFIG=./designs/asap7/gcd/config.mk
 # DESIGN_CONFIG=./designs/asap7/ibex/config.mk
 # DESIGN_CONFIG=./designs/asap7/aes/config.mk
 # DESIGN_CONFIG=./designs/asap7/jpeg/config.mk
 # DESIGN_CONFIG=./designs/asap7/ethmac/config.mk
 # DESIGN_CONFIG=./designs/asap7/uart/config.mk
 # DESIGN_CONFIG=./designs/asap7/sha3/config.mk
-DESIGN_CONFIG=./designs/asap7/riscv32i/config.mk
+# DESIGN_CONFIG=./designs/asap7/riscv32i/config.mk
 # DESIGN_CONFIG=./designs/asap7/swerv_wrapper/config.mk
 
 # DESIGN_CONFIG=./designs/intel22/gcd/config.mk
@@ -158,15 +158,19 @@ endif
 # Enables Re-synthesis for area reclaim
 export RESYNTH_AREA_RECOVER ?= 0
 export RESYNTH_TIMING_RECOVER ?= 0
-export ABC_AREA ?= 0
+export ABC_AREA ?= 1
 # By default, flowtune is not used for optimization, when abc_area=1, this value valid
-export FLOW_TUNE ?= 0
+export FLOW_TUNE ?= 1
 # r: Number of appearances of each synthesis command
+export FLOW_TUNE_r ?= 2
 # t: Targeted metric (default = 0, i.e., AIG Minization targeting number of AIG nodes)
+export FLOW_TUNE_t ?= 0
 # p: Factor of number of Arms (default = 1)
+export FLOW_TUNE_p ?= 1
 # i: Number of MAB iterations (default = 10)
+export FLOW_TUNE_i ?= 10
 # s: Number of MAB sampling for each iteration per Arm (default = 5)
-export rtpis ?= "2 0 1 10 5"
+export FLOW_TUNE_s ?= 5
 
 
 # Global setting for Synthesis

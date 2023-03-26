@@ -8,6 +8,7 @@ if { [info exist ::env(SYNTH_HIERARCHICAL)] && $::env(SYNTH_HIERARCHICAL) == 1 &
 # Generic synthesis
 synth  -top $::env(DESIGN_NAME) {*}$::env(SYNTH_ARGS)
 
+
 if { [info exists ::env(USE_LSORACLE)] } {
     set lso_script [open $::env(OBJECTS_DIR)/lso.script w]
     puts $lso_script "ps -a"
@@ -24,6 +25,7 @@ if { [info exists ::env(USE_LSORACLE)] } {
 
 # Optimize the design
 opt -purge
+
 
 # Technology mapping of adders
 if {[info exist ::env(ADDER_MAP_FILE)] && [file isfile $::env(ADDER_MAP_FILE)]} {
@@ -50,11 +52,15 @@ if {[info exist ::env(DFF_LIB_FILE)]} {
 }
 opt
 
-
 set constr [open $::env(OBJECTS_DIR)/abc.constr w]
 puts $constr "set_driving_cell $::env(ABC_DRIVER_CELL)"
 puts $constr "set_load $::env(ABC_LOAD_IN_FF)"
 close $constr
+
+
+# write_blif $::env(OBJECTS_DIR)/internal.blif
+# write_aiger $::env(OBJECTS_DIR)/example.aig
+puts "hello"
 
 # if {$::env(ABC_AREA)} {
 #   puts "Using ABC area script."
@@ -75,18 +81,20 @@ if {$::env(ABC_AREA) && $::env(FLOW_TUNE)} {
   set abc_script $::env(SCRIPTS_DIR)/abc_speed.script
 }
 
+puts "hello2"
 if {$::env(FLOW_TUNE)} {
-  set rtpis [$::env(rtpis)]
-  set rtpis_list [split $rtpis " "]
-  set cmdline "ftune -d internal.aig -r [lindex $rtpis_list 0] -t [lindex $rtpis_list 1] -p [lindex $rtpis_list 2] -i [lindex $rtpis_list 3] -s [lindex $rtpis_list 4]"
-  set fp [open "abc_flowtune.script" r+]
+  set cmdline "ftune -d $::env(OBJECTS_DIR)/internal.blif -r $::env(FLOW_TUNE_r) -t $::env(FLOW_TUNE_t) -p $::env(FLOW_TUNE_p) -i $::env(FLOW_TUNE_i) -s $::env(FLOW_TUNE_s)"
+  set fp [open "$::env(SCRIPTS_DIR)/abc_flowtune.script" r+]
   set content [read $fp]
+  set content [string range $content [expr {[string first "\n" $content] + 1}] end]
   seek $fp 0
   puts -nonewline $fp "$cmdline\n$content"
   close $fp
 }
 
-
+write_verilog output.v
+abc -c "read_verilog output.v; write_blif output.blif"
+# /workspace/OpenROAD-flow-scripts/tools/FlowTune/FlowTune-AIG-Optimization/abc -import
 
 
 # Technology mapping for cells
