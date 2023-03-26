@@ -73,7 +73,7 @@
 # DESIGN_CONFIG=./designs/asap7/ethmac/config.mk
 # DESIGN_CONFIG=./designs/asap7/uart/config.mk
 # DESIGN_CONFIG=./designs/asap7/sha3/config.mk
-# DESIGN_CONFIG=./designs/asap7/riscv32i/config.mk
+DESIGN_CONFIG=./designs/asap7/riscv32i/config.mk
 # DESIGN_CONFIG=./designs/asap7/swerv_wrapper/config.mk
 
 # DESIGN_CONFIG=./designs/intel22/gcd/config.mk
@@ -82,7 +82,7 @@
 # DESIGN_CONFIG=./designs/gf180/aes/config.mk
 #
 # Default design
-DESIGN_CONFIG ?= ./designs/nangate45/gcd/config.mk
+# DESIGN_CONFIG ?= ./designs/nangate45/gcd/config.mk
 
 # If we are running headless use offscreen rendering for save_image
 ifndef DISPLAY
@@ -159,6 +159,15 @@ endif
 export RESYNTH_AREA_RECOVER ?= 0
 export RESYNTH_TIMING_RECOVER ?= 0
 export ABC_AREA ?= 0
+# By default, flowtune is not used for optimization, when abc_area=1, this value valid
+export FLOW_TUNE ?= 0
+# r: Number of appearances of each synthesis command
+# t: Targeted metric (default = 0, i.e., AIG Minization targeting number of AIG nodes)
+# p: Factor of number of Arms (default = 1)
+# i: Number of MAB iterations (default = 10)
+# s: Number of MAB sampling for each iteration per Arm (default = 5)
+export rtpis ?= "2 0 1 10 5"
+
 
 # Global setting for Synthesis
 export SYNTH_ARGS ?= -flatten
@@ -363,6 +372,10 @@ $(WRAPPED_LEFS):
 $(WRAPPED_LIBS):
 	mkdir -p $(OBJECTS_DIR)/lib
 	sed 's/library(\(.*\))/library(\1_mod)/g' $(filter %$(notdir $(@:_mod.lib=.lib)),$(WRAP_LIBS)) | sed 's/cell(\(.*\))/cell(\1_mod)/g' > $@
+
+# ifeq ($(FLOW_TUNE),)
+#   OPENROAD_EXE           = $(abspath $(FLOW_HOME)/../tools/install/OpenROAD/bin/openroad)
+# endif
 
 # ==============================================================================
 #  ______   ___   _ _____ _   _ _____ ____ ___ ____

@@ -56,13 +56,38 @@ puts $constr "set_driving_cell $::env(ABC_DRIVER_CELL)"
 puts $constr "set_load $::env(ABC_LOAD_IN_FF)"
 close $constr
 
-if {$::env(ABC_AREA)} {
+# if {$::env(ABC_AREA)} {
+#   puts "Using ABC area script."
+#   set abc_script $::env(SCRIPTS_DIR)/abc_area.script
+# } else {
+#   puts "Using ABC speed script."
+#   set abc_script $::env(SCRIPTS_DIR)/abc_speed.script
+# }
+
+if {$::env(ABC_AREA) && $::env(FLOW_TUNE)} {
+  puts "Using ABC FlowTune script."
+  set abc_script $::env(SCRIPTS_DIR)/abc_flowtune.script
+} elseif {$::env(ABC_AREA)} {
   puts "Using ABC area script."
   set abc_script $::env(SCRIPTS_DIR)/abc_area.script
 } else {
   puts "Using ABC speed script."
   set abc_script $::env(SCRIPTS_DIR)/abc_speed.script
 }
+
+if {$::env(FLOW_TUNE)} {
+  set rtpis [$::env(rtpis)]
+  set rtpis_list [split $rtpis " "]
+  set cmdline "ftune -d internal.aig -r [lindex $rtpis_list 0] -t [lindex $rtpis_list 1] -p [lindex $rtpis_list 2] -i [lindex $rtpis_list 3] -s [lindex $rtpis_list 4]"
+  set fp [open "abc_flowtune.script" r+]
+  set content [read $fp]
+  seek $fp 0
+  puts -nonewline $fp "$cmdline\n$content"
+  close $fp
+}
+
+
+
 
 # Technology mapping for cells
 # ABC supports multiple liberty files, but the hook from Yosys to ABC doesn't

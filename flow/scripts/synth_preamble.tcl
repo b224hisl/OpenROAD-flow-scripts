@@ -25,7 +25,6 @@ foreach file $::env(VERILOG_FILES) {
 
 
 
-
 # Read standard cells and macros as blackbox inputs
 # These libs have their dont_use properties set accordingly
 read_liberty -lib {*}$::env(DONT_USE_LIBS)
