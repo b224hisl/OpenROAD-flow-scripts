@@ -16,7 +16,8 @@
 # DESIGN_CONFIG=./designs/nangate45/swerv_wrapper/config.mk
 # DESIGN_CONFIG=./designs/nangate45/tiny-tests/config.mk
 # DESIGN_CONFIG=./designs/nangate45/tinyRocket/config.mk
-DESIGN_CONFIG=./designs/asap7/inverter/config.mk
+# DESIGN_CONFIG=./designs/asap7/inverter/config.mk
+DESIGN_CONFIG=./designs/asap7/bfly/config.mk
 
 # DESIGN_CONFIG=./designs/tsmc65lp/aes/config.mk
 # DESIGN_CONFIG=./designs/tsmc65lp/ariane/config.mk
@@ -180,7 +181,7 @@ export SYNTH_ARGS ?= -flatten
 # Global setting for Floorplan
 export PLACE_PINS_ARGS
 
-export FLOW_VARIANT ?= base
+export FLOW_VARIANT ?= gua
 
 export GPL_TIMING_DRIVEN ?= 1
 export GPL_ROUTABILITY_DRIVEN ?= 1
@@ -757,9 +758,6 @@ clean_finish:
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 
-clean_flowtune:
-	rm  $(FLOWTUNE_DIR)/*script $(FLOWTUNE_DIR)/*log $(FLOWTUNE_DIR)/.temp.result.txt
-	rm $(RESULTS_DIR)/*.blif  $(RESULTS_DIR)/flowtune.v
 
 
 # ==============================================================================

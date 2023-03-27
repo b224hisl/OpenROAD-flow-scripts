@@ -2,7 +2,7 @@ cp $RESULTS_DIR/0_1_yosys.blif $FLOWTUNE_DIR
 cd $FLOWTUNE_DIR
 echo "you are in flowtune dir"
 # ./single_design.sh 0_1_yosys 0_1_yosys.blif $FLOW_TUNE_repeat $FLOW_TUNE_iteration $FLOW_TUNE_target $FLOW_TUNE_sample $FLOW_TUNE_stage
-./single_design.sh 0_1_yosys 0_1_yosys.blif 1 1 4 1 1
+./single_design.sh 0_1_yosys 0_1_yosys.blif 1 1 0 1 1
 cd -
 echo "returning to the previous dir"
 rm $FLOWTUNE_DIR/0_1_yosys.blif
