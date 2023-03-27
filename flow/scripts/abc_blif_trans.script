@@ -1,0 +1,3 @@
+cd $RESULTS_DIR
+echo -e "read 0_0_yosys.blif; write 0_1_yosys.blif" | abc
+cd -

@@ -1,0 +1,260 @@
+[INFO][FLOW] Using platform directory ./platforms/asap7
+[INFO-FLOW] ASU ASAP7 - version 2
+Default PVT selection: BC
+mkdir -p ./results/asap7/inverter/base ./logs/asap7/inverter/base ./reports/asap7/inverter/base
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys -v 3 -c ./scripts/synth.tcl) 2>&1 | tee ./logs/asap7/inverter/base/1_1_yosys.log
+1. Executing Verilog-2005 frontend: ./designs/src/inverter/inverter.v
+2. Executing Liberty frontend.
+3. Executing Liberty frontend.
+4. Executing Liberty frontend.
+5. Executing Liberty frontend.
+6. Executing Liberty frontend.
+7. Executing Verilog-2005 frontend: ./platforms/asap7/yoSys/cells_clkgate_R.v
+8. Executing SYNTH pass.
+8.1. Executing HIERARCHY pass (managing design hierarchy).
+8.2. Executing AST frontend in derive mode using pre-parsed AST for module `\inverter'.
+8.2.1. Analyzing design hierarchy..
+8.2.2. Analyzing design hierarchy..
+8.3. Executing PROC pass (convert processes to netlists).
+8.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+8.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+8.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+8.3.4. Executing PROC_INIT pass (extract init attributes).
+8.3.5. Executing PROC_ARST pass (detect async resets in processes).
+8.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+8.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+8.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+8.3.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+8.3.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+8.3.11. Executing OPT_EXPR pass (perform const folding).
+8.4. Executing FLATTEN pass (flatten design).
+8.5. Executing OPT_EXPR pass (perform const folding).
+8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.7. Executing CHECK pass (checking for obvious problems).
+8.8. Executing OPT pass (performing simple optimizations).
+8.8.1. Executing OPT_EXPR pass (perform const folding).
+8.8.2. Executing OPT_MERGE pass (detect identical cells).
+8.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+8.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+8.8.5. Executing OPT_MERGE pass (detect identical cells).
+8.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+8.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.8.8. Executing OPT_EXPR pass (perform const folding).
+8.8.9. Finished OPT passes. (There is nothing left to do.)
+8.9. Executing FSM pass (extract and optimize FSM).
+8.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+8.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+8.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+8.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+8.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+8.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+8.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+8.10. Executing OPT pass (performing simple optimizations).
+8.10.1. Executing OPT_EXPR pass (perform const folding).
+8.10.2. Executing OPT_MERGE pass (detect identical cells).
+8.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+8.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+8.10.5. Executing OPT_MERGE pass (detect identical cells).
+8.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+8.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.10.8. Executing OPT_EXPR pass (perform const folding).
+8.10.9. Finished OPT passes. (There is nothing left to do.)
+8.11. Executing WREDUCE pass (reducing word size of cells).
+8.12. Executing PEEPOPT pass (run peephole optimizers).
+8.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.14. Executing ALUMACC pass (create $alu and $macc cells).
+8.15. Executing SHARE pass (SAT-based resource sharing).
+8.16. Executing OPT pass (performing simple optimizations).
+8.16.1. Executing OPT_EXPR pass (perform const folding).
+8.16.2. Executing OPT_MERGE pass (detect identical cells).
+8.16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+8.16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+8.16.5. Executing OPT_MERGE pass (detect identical cells).
+8.16.6. Executing OPT_DFF pass (perform DFF optimizations).
+8.16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.16.8. Executing OPT_EXPR pass (perform const folding).
+8.16.9. Finished OPT passes. (There is nothing left to do.)
+8.17. Executing MEMORY pass.
+8.17.1. Executing OPT_MEM pass (optimize memories).
+8.17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+8.17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+8.17.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+8.17.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.17.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+8.17.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+8.17.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.17.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+8.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.19. Executing OPT pass (performing simple optimizations).
+8.19.1. Executing OPT_EXPR pass (perform const folding).
+8.19.2. Executing OPT_MERGE pass (detect identical cells).
+8.19.3. Executing OPT_DFF pass (perform DFF optimizations).
+8.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.19.5. Finished fast OPT passes.
+8.20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+8.21. Executing OPT pass (performing simple optimizations).
+8.21.1. Executing OPT_EXPR pass (perform const folding).
+8.21.2. Executing OPT_MERGE pass (detect identical cells).
+8.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+8.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+8.21.5. Executing OPT_MERGE pass (detect identical cells).
+8.21.6. Executing OPT_SHARE pass.
+8.21.7. Executing OPT_DFF pass (perform DFF optimizations).
+8.21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.21.9. Executing OPT_EXPR pass (perform const folding).
+8.21.10. Finished OPT passes. (There is nothing left to do.)
+8.22. Executing TECHMAP pass (map to technology primitives).
+8.22.1. Executing Verilog-2005 frontend: /workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/../share/yosys/techmap.v
+8.22.2. Continuing TECHMAP pass.
+8.23. Executing OPT pass (performing simple optimizations).
+8.23.1. Executing OPT_EXPR pass (perform const folding).
+8.23.2. Executing OPT_MERGE pass (detect identical cells).
+8.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+8.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.23.5. Finished fast OPT passes.
+8.24. Executing ABC pass (technology mapping using ABC).
+8.24.1. Extracting gate netlist of module `\inverter' to `<abc-temp-dir>/input.blif'..
+8.25. Executing OPT pass (performing simple optimizations).
+8.25.1. Executing OPT_EXPR pass (perform const folding).
+8.25.2. Executing OPT_MERGE pass (detect identical cells).
+8.25.3. Executing OPT_DFF pass (perform DFF optimizations).
+8.25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.25.5. Finished fast OPT passes.
+8.26. Executing HIERARCHY pass (managing design hierarchy).
+8.26.1. Analyzing design hierarchy..
+8.26.2. Analyzing design hierarchy..
+8.27. Printing statistics.
+8.28. Executing CHECK pass (checking for obvious problems).
+hello
+9. Executing BLIF backend.
+begin blif transting
+ERROR: TCL interpreter returned an error: you are in flowtune dir
+*************  level-0 tuning starts *********** 
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> ftune -d ./0_1_yosys.blif -r 2 -t 1 -p 1 -i 0 -s 10
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read ./0_1_yosys.blif; source 0_1_yosys.script;strash;write internal.aig;ps
+Cannot open input file "./0_1_yosys.blif". 
+Error: Empty network.
+abc 01> ***EOF***
+*************  level[1] tuning starts *********** 
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> ftune -d internal.aig -r 2 -t 1 -p 1 -i 0 -s 10
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read internal.aig; source 0_1_yosys.script;strash;write internal.aig
+Cannot open input file "internal.aig". 
+Error: Empty network.
+abc 01> ***EOF***
+*************  level[2] tuning starts *********** 
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> ftune -d internal.aig -r 2 -t 1 -p 1 -i 0 -s 10
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read internal.aig; source 0_1_yosys.script;strash;write internal.aig
+Cannot open input file "internal.aig". 
+Error: Empty network.
+abc 01> ***EOF***
+*************  level[3] tuning starts *********** 
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> ftune -d internal.aig -r 2 -t 1 -p 1 -i 0 -s 10
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read internal.aig; source 0_1_yosys.script;strash;write internal.aig
+Cannot open input file "internal.aig". 
+Error: Empty network.
+abc 01> ***EOF***
+*************  level[4] tuning starts *********** 
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> ftune -d internal.aig -r 2 -t 1 -p 1 -i 0 -s 10
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read internal.aig; source 0_1_yosys.script;strash;write internal.aig
+Cannot open input file "internal.aig". 
+Error: Empty network.
+abc 01> ***EOF***
+*************  level[5] tuning starts *********** 
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> ftune -d internal.aig -r 2 -t 1 -p 1 -i 0 -s 10
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read internal.aig; source 0_1_yosys.script;strash;write internal.aig
+Cannot open input file "internal.aig". 
+Error: Empty network.
+abc 01> ***EOF***
+UC Berkeley, ABC 1.01 (compiled Mar 26 2023 13:34:31)
+abc 01> read 0_1_yosys.aig; write_blif gua.blif
+Cannot open input file "0_1_yosys.aig". 
+Empty network.
+abc 01> ***EOF***
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.13+15 (git sha1 bc027b2ca, gcc 9.4.0-1ubuntu1~20.04.1 -fPIC -Os)
+
+
+yosys> read_blif gua.blif; write_verilog gua.v
+1. Executing BLIF frontend.
+ERROR: Can't open input file `gua.blif' for reading: No such file or directory
+
+yosys> exit
+
+End of script. Logfile hash: 73e2f446d7, CPU: user 0.00s system 0.00s, MEM: 11.18 MB peak
+Yosys 0.13+15 (git sha1 bc027b2ca, gcc 9.4.0-1ubuntu1~20.04.1 -fPIC -Os)
+Time spent: 100% 2x read_blif (0 sec)
+********************************************************
+[0;31m Final design produced by FlowTune: 0_1_yosys.aig[0m
+********************************************************
+/workspace/OpenROAD-flow-scripts/flow
+returning to the previous dir
+rm: cannot remove '.temp.result.txt': No such file or directory
+rm: cannot remove './0_1_yosys.blif.log': No such file or directory
+./single_design.sh: line 31: 116496 Done                    echo -e "ftune -d $ftune_input -r $repeat -t $target -p 1 -i $iteration -s $sample"
+     116497 Segmentation fault      | ./abc
+shuf: ./0_1_yosys.blif.script: No such file or directory
+rm: cannot remove '.temp.result.txt': No such file or directory
+rm: cannot remove 'internal.aig.log': No such file or directory
+./single_design.sh: line 46: 116505 Done                    echo -e "ftune -d internal.aig -r $repeat -t $target -p 1 -i $iteration -s $sample"
+     116506 Segmentation fault      | ./abc
+shuf: internal.aig.script: No such file or directory
+rm: cannot remove '.temp.result.txt': No such file or directory
+rm: cannot remove 'internal.aig.log': No such file or directory
+./single_design.sh: line 46: 116514 Done                    echo -e "ftune -d internal.aig -r $repeat -t $target -p 1 -i $iteration -s $sample"
+     116515 Segmentation fault      | ./abc
+shuf: internal.aig.script: No such file or directory
+rm: cannot remove '.temp.result.txt': No such file or directory
+rm: cannot remove 'internal.aig.log': No such file or directory
+./single_design.sh: line 46: 116536 Done                    echo -e "ftune -d internal.aig -r $repeat -t $target -p 1 -i $iteration -s $sample"
+     116537 Segmentation fault      | ./abc
+shuf: internal.aig.script: No such file or directory
+rm: cannot remove '.temp.result.txt': No such file or directory
+rm: cannot remove 'internal.aig.log': No such file or directory
+./single_design.sh: line 46: 116545 Done                    echo -e "ftune -d internal.aig -r $repeat -t $target -p 1 -i $iteration -s $sample"
+     116546 Segmentation fault      | ./abc
+shuf: internal.aig.script: No such file or directory
+rm: cannot remove '.temp.result.txt': No such file or directory
+rm: cannot remove 'internal.aig.log': No such file or directory
+./single_design.sh: line 46: 116554 Done                    echo -e "ftune -d internal.aig -r $repeat -t $target -p 1 -i $iteration -s $sample"
+     116555 Segmentation fault      | ./abc
+shuf: internal.aig.script: No such file or directory
+mv: cannot stat 'internal.aig': No such file or directory
+rm: cannot remove 'internal.*': No such file or directory
+rm: cannot remove '*.log': No such file or directory
+rm: cannot remove '../tools/FlowTune/FlowTune-AIG-Optimization/0_1_yosys.blif': No such file or directory
+mv: cannot stat '../tools/FlowTune/FlowTune-AIG-Optimization/gua.v': No such file or directory
+Command exited with non-zero status 1
+Elapsed time: 0:02.66[h:]min:sec. CPU time: user 2.55 sys 0.11 (100%). Peak memory: 71628KB.

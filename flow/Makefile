@@ -16,6 +16,7 @@
 # DESIGN_CONFIG=./designs/nangate45/swerv_wrapper/config.mk
 # DESIGN_CONFIG=./designs/nangate45/tiny-tests/config.mk
 # DESIGN_CONFIG=./designs/nangate45/tinyRocket/config.mk
+DESIGN_CONFIG=./designs/asap7/inverter/config.mk
 
 # DESIGN_CONFIG=./designs/tsmc65lp/aes/config.mk
 # DESIGN_CONFIG=./designs/tsmc65lp/ariane/config.mk
@@ -66,7 +67,7 @@
 # DESIGN_CONFIG=./designs/sky130hs/jpeg/config.mk
 # DESIGN_CONFIG=./designs/sky130hs/riscv32i/config.mk
 
-DESIGN_CONFIG=./designs/asap7/gcd/config.mk
+# DESIGN_CONFIG=./designs/asap7/gcd/config.mk
 # DESIGN_CONFIG=./designs/asap7/ibex/config.mk
 # DESIGN_CONFIG=./designs/asap7/aes/config.mk
 # DESIGN_CONFIG=./designs/asap7/jpeg/config.mk
@@ -127,7 +128,7 @@ export WORK_HOME     ?= .
 export UTILS_DIR     ?= $(FLOW_HOME)/util
 export SCRIPTS_DIR   ?= $(FLOW_HOME)/scripts
 export TEST_DIR      ?= $(FLOW_HOME)/test
-
+export FLOWTUNE_DIR ?= ../tools/FlowTune/FlowTune-AIG-Optimization
 #-------------------------------------------------------------------------------
 # Include design and platform configuration
 include $(DESIGN_CONFIG)
@@ -161,16 +162,16 @@ export RESYNTH_TIMING_RECOVER ?= 0
 export ABC_AREA ?= 1
 # By default, flowtune is not used for optimization, when abc_area=1, this value valid
 export FLOW_TUNE ?= 1
-# r: Number of appearances of each synthesis command
-export FLOW_TUNE_r ?= 2
+# r: Number of appearances of each synthesis command repeat
+export FLOW_TUNE_repeat ?= 1
 # t: Targeted metric (default = 0, i.e., AIG Minization targeting number of AIG nodes)
-export FLOW_TUNE_t ?= 0
-# p: Factor of number of Arms (default = 1)
-export FLOW_TUNE_p ?= 1
+export FLOW_TUNE_target ?= 0
 # i: Number of MAB iterations (default = 10)
-export FLOW_TUNE_i ?= 10
+export FLOW_TUNE_iteration ?= 1
 # s: Number of MAB sampling for each iteration per Arm (default = 5)
-export FLOW_TUNE_s ?= 5
+export FLOW_TUNE_sample ?= 1
+# s: stage (default = 5)
+export FLOW_TUNE_stage ?= 1
 
 
 # Global setting for Synthesis
@@ -756,6 +757,10 @@ clean_finish:
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 
+clean_flowtune:
+	rm  $(FLOWTUNE_DIR)/*script $(FLOWTUNE_DIR)/*log $(FLOWTUNE_DIR)/.temp.result.txt
+	rm $(RESULTS_DIR)/*.blif  $(RESULTS_DIR)/flowtune.v
+
 
 # ==============================================================================
 #  __  __ ___ ____   ____
@@ -777,7 +782,7 @@ clean:
 	@echo "  clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish"
 	@echo
 
-clean_all: clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish clean_metadata
+clean_all: clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish clean_metadata clean_flowtune
 	rm -rf $(OBJECTS_DIR)
 
 nuke: clean_test clean_issues
