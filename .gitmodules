@@ -7,6 +7,3 @@
 [submodule "tools/LSOracle"]
 	path = tools/LSOracle
 	url = https://github.com/The-OpenROAD-Project/LSOracle.git
-[submodule "tools/FlowTune"]
-	path = tools/FlowTune
-	url = https://github.com/Yu-Utah/FlowTune.git

@@ -2,6 +2,7 @@
 
 # Build working directories
 tools/install
+tools/FlowTune
 
 # Build files
 build_openroad.log

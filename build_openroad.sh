@@ -293,7 +293,7 @@ __update_openroad_app_remote()
 __change_openroad_app_remote()
 {
         base_url=$(dirname "${OPENROAD_APP_GIT_URL}")
-        if [[ ${base_url##*/} = $base_url ]]; then
+        if [[ ${base_url##*/} = $bease_url ]]; then
                 OPENROAD_APP_REMOTE=${base_url##*:}
         else
                 OPENROAD_APP_REMOTE=${base_url##*/}
