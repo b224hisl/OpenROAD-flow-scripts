@@ -3,6 +3,7 @@
 # Build working directories
 tools/install
 tools/FlowTune
+tools/openmpi*
 
 # Build files
 build_openroad.log

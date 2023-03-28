@@ -14,7 +14,6 @@ if {$::env(FLOW_TUNE)} {
   exec bash -f $::env(SCRIPTS_DIR)/abc_blif_trans.script
   puts "h eheh"
   exec bash -f $::env(SCRIPTS_DIR)/flowtune.script
-  puts "hahaha"
   read_verilog $::env(RESULTS_DIR)/flowtune.v
 }
 

@@ -1,8 +1,7 @@
 #!/bin/bash
 
-alias abc='/workspace/OpenROAD-flow-scripts/tools/FlowTune/FlowTune-AIG-Optimization/abc'
-export OPEN_ROAD=/workspace/OpenROAD-flow-scripts/tools/install/OpenROAD/bin
-export YOSYS=/workspace/OpenROAD-flow-scripts/tools/install/yosys/bin
+alias abc='yosys-abc'
+export OPEN_ROAD=$(pwd)/tools/install/OpenROAD/bin
+export YOSYS_ABC=$(pwd)/tools/install/yosys/bin
 # export KLAYOUT=/workspace/OpenROAD-flow-scripts/tools/install/usr/bin
-export PATH=$PATH:$OPEN_ROAD:$YOSYS
-export PATH=/workspace/OpenROAD-flow-scripts/tools/FlowTune/FlowTune-AIG-Optimization:$PATH
+export PATH=$PATH:$OPEN_ROAD:$YOSYS_ABC

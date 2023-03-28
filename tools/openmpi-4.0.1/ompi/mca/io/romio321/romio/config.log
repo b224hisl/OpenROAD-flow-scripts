@@ -1366,11 +1366,782 @@ configure:19797: checking for sys/mount.h
 configure:19797: result: yes
 configure:19797: checking sys/statvfs.h usability
 configure:19797: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:19797: $? = 0
+configure:19797: result: yes
+configure:19797: checking sys/statvfs.h presence
+configure:19797: gcc -E -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c
+configure:19797: $? = 0
+configure:19797: result: yes
+configure:19797: checking for sys/statvfs.h
+configure:19797: result: yes
+configure:19809: checking for statfs
+configure:19809: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:19809: $? = 0
+configure:19809: result: yes
+configure:19818: checking whether struct statfs properly defined
+configure:19846: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:19846: $? = 0
+configure:19853: result: yes
+configure:19865: checking for f_fstypename member of statfs structure
+configure:19886: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+conftest.c: In function 'main':
+conftest.c:60:19: error: storage size of 'f' isn't known
+   60 |     struct statfs f;
+      |                   ^
+configure:19886: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "ROMIO"
+| #define PACKAGE_TARNAME "romio"
+| #define PACKAGE_VERSION "Open MPI"
+| #define PACKAGE_STRING "ROMIO Open MPI"
+| #define PACKAGE_BUGREPORT "discuss@mpich.org"
+| #define PACKAGE_URL "http://www.mpich.org/"
+| #define PACKAGE "romio"
+| #define VERSION "Open MPI"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_MPI_OFFSET 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_MEMALIGN 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_MALLOC_H 1
+| #define HAVE_STDDEF_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_LIMITS_H 1
+| #define HAVE_TIME_H 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_VOID_P 8
+| #define INT_LT_POINTER 1
+| #define HAVE_INT_LT_POINTER 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_LONG_LONG_64 1
+| #define HAVE_MPI_LONG_LONG_INT 1
+| #define HAVE_MPI_INFO 1
+| #define ROMIO_NFS 1
+| #define ROMIO_UFS 1
+| #define ROMIO_TESTFS 1
+| #define ROMIO_RUN_ON_LINUX 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_MOUNT_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_STATFS 1
+| #define HAVE_STRUCT_STATFS 1
+| /* end confdefs.h.  */
+| 
+| #include <sys/param.h>
+| #include <sys/mount.h>
+| #include <string.h>
+| 
+| int
+| main ()
+| {
+| 
+|     struct statfs f;
+|     memset(&f, 0, sizeof(f));
+|     strncmp("nfs", f.f_fstypename, 3);
+| 
+|   ;
+|   return 0;
+| }
+configure:19893: result: no
+configure:19907: checking for sys/stat.h
+configure:19907: result: yes
+configure:19907: checking for sys/types.h
+configure:19907: result: yes
+configure:19907: checking for unistd.h
+configure:19907: result: yes
+configure:19919: checking for stat
+configure:19919: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:19919: $? = 0
+configure:19919: result: yes
+configure:19927: checking for st_fstype member of stat structure
+configure:19954: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+conftest.c: In function 'main':
+conftest.c:73:3: error: 'struct stat' has no member named 'st_fstype'
+   73 |  s.st_fstype = NULL;
+      |   ^
+configure:19954: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "ROMIO"
+| #define PACKAGE_TARNAME "romio"
+| #define PACKAGE_VERSION "Open MPI"
+| #define PACKAGE_STRING "ROMIO Open MPI"
+| #define PACKAGE_BUGREPORT "discuss@mpich.org"
+| #define PACKAGE_URL "http://www.mpich.org/"
+| #define PACKAGE "romio"
+| #define VERSION "Open MPI"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_MPI_OFFSET 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_MEMALIGN 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_MALLOC_H 1
+| #define HAVE_STDDEF_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_LIMITS_H 1
+| #define HAVE_TIME_H 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_VOID_P 8
+| #define INT_LT_POINTER 1
+| #define HAVE_INT_LT_POINTER 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_LONG_LONG_64 1
+| #define HAVE_MPI_LONG_LONG_INT 1
+| #define HAVE_MPI_INFO 1
+| #define ROMIO_NFS 1
+| #define ROMIO_UFS 1
+| #define ROMIO_TESTFS 1
+| #define ROMIO_RUN_ON_LINUX 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_MOUNT_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_STATFS 1
+| #define HAVE_STRUCT_STATFS 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_STAT 1
+| #define HAVE_STAT 1
+| /* end confdefs.h.  */
+| 
+| #ifdef HAVE_SYS_TYPES_H
+| #include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_STAT_H
+| #include <sys/stat.h>
+| #endif
+| #ifdef HAVE_UNISTD_H
+| #include <unistd.h>
+| #endif
+| 
+| int
+| main ()
+| {
+| 
+| 	struct stat s;
+| 
+| 	s.st_fstype = NULL;
+| 
+|   ;
+|   return 0;
+| }
+configure:19961: result: no
+configure:19977: checking for sys/types.h
+configure:19977: result: yes
+configure:19977: checking for sys/statvfs.h
+configure:19977: result: yes
+configure:19977: checking for sys/vfs.h
+configure:19977: result: yes
+configure:19989: checking for statvfs
+configure:19989: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:19989: $? = 0
+configure:19989: result: yes
+configure:19997: checking for f_basetype member of statvfs structure
+configure:20024: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+conftest.c: In function 'main':
+conftest.c:78:5: error: 'struct statvfs' has no member named 'f_basetype'
+   78 |  foo.f_basetype[0] = 'a';
+      |     ^
+configure:20024: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "ROMIO"
+| #define PACKAGE_TARNAME "romio"
+| #define PACKAGE_VERSION "Open MPI"
+| #define PACKAGE_STRING "ROMIO Open MPI"
+| #define PACKAGE_BUGREPORT "discuss@mpich.org"
+| #define PACKAGE_URL "http://www.mpich.org/"
+| #define PACKAGE "romio"
+| #define VERSION "Open MPI"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_MPI_OFFSET 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_MEMALIGN 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_MALLOC_H 1
+| #define HAVE_STDDEF_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_LIMITS_H 1
+| #define HAVE_TIME_H 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_VOID_P 8
+| #define INT_LT_POINTER 1
+| #define HAVE_INT_LT_POINTER 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_LONG_LONG_64 1
+| #define HAVE_MPI_LONG_LONG_INT 1
+| #define HAVE_MPI_INFO 1
+| #define ROMIO_NFS 1
+| #define ROMIO_UFS 1
+| #define ROMIO_TESTFS 1
+| #define ROMIO_RUN_ON_LINUX 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_MOUNT_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_STATFS 1
+| #define HAVE_STRUCT_STATFS 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_STAT 1
+| #define HAVE_STAT 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_STATVFS 1
+| #define HAVE_STATVFS 1
+| /* end confdefs.h.  */
+| 
+| #ifdef HAVE_SYS_TYPES_H
+| #include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_VFS_H
+| #include <sys/vfs.h>
+| #endif
+| #ifdef HAVE_SYS_STATVFS_H
+| #include <sys/statvfs.h>
+| #endif
+| 
+| int
+| main ()
+| {
+| 
+| 	struct statvfs foo;
+| 
+| 	foo.f_basetype[0] = 'a';
+| 
+|   ;
+|   return 0;
+| }
+configure:20031: result: no
+configure:20041: checking for blksize_t
+configure:20041: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:20041: $? = 0
+configure:20041: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+conftest.c: In function 'main':
+conftest.c:75:24: error: expected expression before ')' token
+   75 | if (sizeof ((blksize_t)))
+      |                        ^
+configure:20041: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "ROMIO"
+| #define PACKAGE_TARNAME "romio"
+| #define PACKAGE_VERSION "Open MPI"
+| #define PACKAGE_STRING "ROMIO Open MPI"
+| #define PACKAGE_BUGREPORT "discuss@mpich.org"
+| #define PACKAGE_URL "http://www.mpich.org/"
+| #define PACKAGE "romio"
+| #define VERSION "Open MPI"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_MPI_OFFSET 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_MEMALIGN 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_MALLOC_H 1
+| #define HAVE_STDDEF_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_LIMITS_H 1
+| #define HAVE_TIME_H 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_VOID_P 8
+| #define INT_LT_POINTER 1
+| #define HAVE_INT_LT_POINTER 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_LONG_LONG_64 1
+| #define HAVE_MPI_LONG_LONG_INT 1
+| #define HAVE_MPI_INFO 1
+| #define ROMIO_NFS 1
+| #define ROMIO_UFS 1
+| #define ROMIO_TESTFS 1
+| #define ROMIO_RUN_ON_LINUX 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_MOUNT_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_STATFS 1
+| #define HAVE_STRUCT_STATFS 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_STAT 1
+| #define HAVE_STAT 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_STATVFS 1
+| #define HAVE_STATVFS 1
+| /* end confdefs.h.  */
+| 
+| 	       #ifdef HAVE_SYS_TYPES_H
+| 	       #include <sys/types.h>
+| 	       #endif
+| 	       #ifdef HAVE_SYS_STAT_H
+| 	       #include <sys/stat.h>
+| 	       #endif
+| 	       #ifdef HAVE_UNISTD_H
+| 	       #include <unistd.h>
+| 	       #endif
+| 
+| int
+| main ()
+| {
+| if (sizeof ((blksize_t)))
+| 	    return 0;
+|   ;
+|   return 0;
+| }
+configure:20041: result: yes
+configure:20075: checking for special C compiler options needed for large files
+configure:20120: result: no
+configure:20126: checking for _FILE_OFFSET_BITS value needed for large files
+configure:20151: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:20151: $? = 0
+configure:20183: result: no
+configure:20275: checking whether pwrite is declared
+configure:20275: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:20275: $? = 0
+configure:20275: result: yes
+configure:20354: checking for strerror
+configure:20354: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:20354: $? = 0
+configure:20354: result: yes
+configure:20439: checking for doctext
+configure:20469: result: no
+configure:20834: checking for strdup
+configure:20834: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+conftest.c:91:6: warning: conflicting types for built-in function 'strdup'; expected 'char *(const char *)' [-Wbuiltin-declaration-mismatch]
+   91 | char strdup ();
+      |      ^~~~~~
+configure:20834: $? = 0
+configure:20834: result: yes
+configure:20846: checking whether strdup needs a declaration
+configure:20864: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:20864: $? = 0
+configure:20871: result: no
+configure:20885: checking for snprintf
+configure:20885: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+conftest.c:92:6: warning: conflicting types for built-in function 'snprintf'; expected 'int(char *, long unsigned int,  const char *, ...)' [-Wbuiltin-declaration-mismatch]
+   92 | char snprintf ();
+      |      ^~~~~~~~
+conftest.c:80:1: note: 'snprintf' is declared in header '<stdio.h>'
+   79 | # include <limits.h>
+   80 | #else
+configure:20885: $? = 0
+configure:20885: result: yes
+configure:20897: checking whether snprintf needs a declaration
+configure:20915: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:20915: $? = 0
+configure:20922: result: no
+configure:20936: checking for lstat
+configure:20936: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:20936: $? = 0
+configure:20936: result: yes
+configure:20948: checking whether lstat needs a declaration
+configure:20967: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:20967: $? = 0
+configure:20974: result: no
+configure:20988: checking for readlink
+configure:20988: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:20988: $? = 0
+configure:20988: result: yes
+configure:21000: checking whether readlink needs a declaration
+configure:21018: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21018: $? = 0
+configure:21025: result: no
+configure:21039: checking for fsync
+configure:21039: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:21039: $? = 0
+configure:21039: result: yes
+configure:21051: checking whether fsync needs a declaration
+configure:21069: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21069: $? = 0
+configure:21076: result: no
+configure:21090: checking for ftruncate
+configure:21090: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:21090: $? = 0
+configure:21090: result: yes
+configure:21102: checking whether ftruncate needs a declaration
+configure:21120: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21120: $? = 0
+configure:21127: result: no
+configure:21142: checking for lseek64
+configure:21142: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:21142: $? = 0
+configure:21142: result: yes
+configure:21153: checking whether lseek64 needs a declaration
+configure:21171: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+conftest.c:76:37: error: 'lseek64' undeclared here (not in a function); did you mean 'lseek'?
+   76 | void (*fptr)(void) = (void(*)(void))lseek64;
+      |                                     ^~~~~~~
+      |                                     lseek
+configure:21171: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "ROMIO"
+| #define PACKAGE_TARNAME "romio"
+| #define PACKAGE_VERSION "Open MPI"
+| #define PACKAGE_STRING "ROMIO Open MPI"
+| #define PACKAGE_BUGREPORT "discuss@mpich.org"
+| #define PACKAGE_URL "http://www.mpich.org/"
+| #define PACKAGE "romio"
+| #define VERSION "Open MPI"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define HAVE_MPI_OFFSET 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_MEMALIGN 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_MALLOC_H 1
+| #define HAVE_STDDEF_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_LIMITS_H 1
+| #define HAVE_TIME_H 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_VOID_P 8
+| #define INT_LT_POINTER 1
+| #define HAVE_INT_LT_POINTER 1
+| #define SIZEOF_LONG_LONG 8
+| #define HAVE_LONG_LONG_64 1
+| #define HAVE_MPI_LONG_LONG_INT 1
+| #define HAVE_MPI_INFO 1
+| #define ROMIO_NFS 1
+| #define ROMIO_UFS 1
+| #define ROMIO_TESTFS 1
+| #define ROMIO_RUN_ON_LINUX 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_MOUNT_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_STATFS 1
+| #define HAVE_STRUCT_STATFS 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_STAT 1
+| #define HAVE_STAT 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STATVFS_H 1
+| #define HAVE_SYS_VFS_H 1
+| #define HAVE_STATVFS 1
+| #define HAVE_STATVFS 1
+| #define HAVE_DECL_PWRITE 1
+| #define HAVE_STRERROR 1
+| #define HAVE_STATUS_SET_BYTES 1
+| #define HAVE_MPI_DARRAY_SUBARRAY 1
+| #define MPIO_BUILD_PROFILING 1
+| #define HAVE_DECL_MPI_COMBINER_HINDEXED_BLOCK 1
+| #define HAVE_MPIIO_CONST 1
+| #define HAVE_STRDUP 1
+| #define HAVE_SNPRINTF 1
+| #define HAVE_LSTAT 1
+| #define HAVE_READLINK 1
+| #define HAVE_FSYNC 1
+| #define HAVE_FTRUNCATE 1
+| #define HAVE_LSEEK64 1
+| /* end confdefs.h.  */
+| #include <unistd.h>
+| void (*fptr)(void) = (void(*)(void))lseek64;
+| int
+| main ()
+| {
+| 
+|   ;
+|   return 0;
+| }
+configure:21178: result: yes
+configure:21193: checking for usleep
+configure:21193: gcc -o conftest -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include       conftest.c  >&5
+configure:21193: $? = 0
+configure:21193: result: yes
+configure:21204: checking whether usleep needs a declaration
+configure:21222: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21222: $? = 0
+configure:21229: result: no
+configure:21321: checking for C/C++ restrict keyword
+configure:21346: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -DHAVE_ROMIOCONF_H -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21346: $? = 0
+configure:21354: result: __restrict
+configure:21371: checking whether __attribute__ allowed
+configure:21388: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -DHAVE_ROMIOCONF_H -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21388: $? = 0
+configure:21395: result: yes
+configure:21397: checking whether __attribute__((format)) allowed
+configure:21414: gcc -c -O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -DHAVE_ROMIOCONF_H -I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include    conftest.c >&5
+configure:21414: $? = 0
+configure:21421: result: yes
+configure:21564: checking for gcov
+configure:21580: found /usr/bin/gcov
+configure:21591: result: gcov
+configure:21919: checking that generated files are newer than configure
+configure:21925: result: done
+configure:22140: creating ./config.status
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by ROMIO config.status Open MPI, which was
+generated by GNU Autoconf 2.69.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status 
+
+on b224hisl-openroadflowsc-475mpzqglnx
+
+config.status:1430: creating Makefile
+config.status:1430: creating localdefs
+config.status:1430: creating test/Makefile
+config.status:1430: creating test/misc.c
+config.status:1430: creating test/large_file.c
+config.status:1430: creating test/runtests
+config.status:1430: creating test-internal/Makefile
+config.status:1430: creating util/romioinstall
+config.status:1430: creating include/mpio.h
+config.status:1430: creating test/fmisc.f
+config.status:1430: creating test/fcoll_test.f
+config.status:1430: creating test/pfcoll_test.f
+config.status:1430: creating test/fperf.f
+config.status:1430: creating adio/include/romioconf.h
+config.status:1644: executing depfiles commands
+config.status:1644: executing libtool commands
+config.status:1644: executing default-1 commands
 
 ## ---------------- ##
 ## Cache variables. ##
 ## ---------------- ##
 
+ac_cv_build=x86_64-unknown-linux-gnu
+ac_cv_c_compiler_gnu=yes
+ac_cv_c_restrict=__restrict
+ac_cv_env_CC_set=set
+ac_cv_env_CC_value=gcc
+ac_cv_env_CFLAGS_set=set
+ac_cv_env_CFLAGS_value='-O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__'
+ac_cv_env_CPPFLAGS_set=set
+ac_cv_env_CPPFLAGS_value='-I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include   '
+ac_cv_env_CPP_set=
+ac_cv_env_CPP_value=
+ac_cv_env_F77_set=
+ac_cv_env_F77_value=
+ac_cv_env_FCFLAGS_set=
+ac_cv_env_FCFLAGS_value=
+ac_cv_env_FC_set=
+ac_cv_env_FC_value=
+ac_cv_env_FFLAGS_set=set
+ac_cv_env_FFLAGS_value=
+ac_cv_env_FROM_LAM_set=
+ac_cv_env_FROM_LAM_value=
+ac_cv_env_FROM_MPICH_set=
+ac_cv_env_FROM_MPICH_value=
+ac_cv_env_FROM_OMPI_set=set
+ac_cv_env_FROM_OMPI_value=yes
+ac_cv_env_GCOV_set=
+ac_cv_env_GCOV_value=
+ac_cv_env_LDFLAGS_set=set
+ac_cv_env_LDFLAGS_value='  '
+ac_cv_env_LIBS_set=
+ac_cv_env_LIBS_value=
+ac_cv_env_LT_SYS_LIBRARY_PATH_set=
+ac_cv_env_LT_SYS_LIBRARY_PATH_value=
+ac_cv_env_build_alias_set=
+ac_cv_env_build_alias_value=
+ac_cv_env_host_alias_set=
+ac_cv_env_host_alias_value=
+ac_cv_env_master_top_builddir_set=
+ac_cv_env_master_top_builddir_value=
+ac_cv_env_master_top_srcdir_set=
+ac_cv_env_master_top_srcdir_value=
+ac_cv_env_target_alias_set=
+ac_cv_env_target_alias_value=
+ac_cv_func_fsync=yes
+ac_cv_func_ftruncate=yes
+ac_cv_func_lseek64=yes
+ac_cv_func_lstat=yes
+ac_cv_func_memalign=yes
+ac_cv_func_readlink=yes
+ac_cv_func_snprintf=yes
+ac_cv_func_stat=yes
+ac_cv_func_statfs=yes
+ac_cv_func_statvfs=yes
+ac_cv_func_strdup=yes
+ac_cv_func_strerror=yes
+ac_cv_func_usleep=yes
+ac_cv_have_decl_pwrite=yes
+ac_cv_header_dlfcn_h=yes
+ac_cv_header_fcntl_h=yes
+ac_cv_header_inttypes_h=yes
+ac_cv_header_limits_h=yes
+ac_cv_header_malloc_h=yes
+ac_cv_header_memory_h=yes
+ac_cv_header_mpix_h=no
+ac_cv_header_stdc=yes
+ac_cv_header_stddef_h=yes
+ac_cv_header_stdint_h=yes
+ac_cv_header_stdlib_h=yes
+ac_cv_header_string_h=yes
+ac_cv_header_strings_h=yes
+ac_cv_header_sys_attr_h=no
+ac_cv_header_sys_mount_h=yes
+ac_cv_header_sys_param_h=yes
+ac_cv_header_sys_stat_h=yes
+ac_cv_header_sys_statvfs_h=yes
+ac_cv_header_sys_types_h=yes
+ac_cv_header_sys_vfs_h=yes
+ac_cv_header_time_h=yes
+ac_cv_header_unistd_h=yes
+ac_cv_host=x86_64-unknown-linux-gnu
+ac_cv_objext=o
+ac_cv_path_EGREP='/usr/bin/grep -E'
+ac_cv_path_FGREP='/usr/bin/grep -F'
+ac_cv_path_GREP=/usr/bin/grep
+ac_cv_path_PVFS2_CONFIG=notfound
+ac_cv_path_SED=/usr/bin/sed
+ac_cv_path_install='/usr/bin/install -c'
+ac_cv_path_lt_DD=/usr/bin/dd
+ac_cv_path_mkdir=/usr/bin/mkdir
+ac_cv_prog_AWK=gawk
+ac_cv_prog_CPP='gcc -E'
+ac_cv_prog_GCOV=gcov
+ac_cv_prog_MAKE=make
+ac_cv_prog_ac_ct_AR=ar
+ac_cv_prog_ac_ct_OBJDUMP=objdump
+ac_cv_prog_ac_ct_RANLIB=ranlib
+ac_cv_prog_ac_ct_STRIP=strip
+ac_cv_prog_cc_c89=
+ac_cv_prog_cc_g=yes
+ac_cv_prog_make_make_set=yes
+ac_cv_sizeof_int=4
+ac_cv_sizeof_long_long=8
+ac_cv_sizeof_void_p=8
+ac_cv_sys_file_offset_bits=no
+ac_cv_sys_largefile_CC=no
+ac_cv_type_blksize_t=yes
+ac_cv_type_long_long=yes
+ac_cv_type_off_t=yes
+ac_cv_type_size_t=yes
+ac_cv_type_ssize_t=yes
+ac_cv_type_u_char=yes
+ac_cv_type_u_int=yes
+ac_cv_type_u_long=yes
+ac_cv_type_u_short=yes
+am_cv_CC_dependencies_compiler_type=gcc3
+am_cv_ar_interface=ar
+am_cv_make_support_nested_variables=yes
+am_cv_prog_cc_c_o=yes
+lt_cv_ar_at_file=@
+lt_cv_archive_cmds_need_lc=no
+lt_cv_deplibs_check_method=pass_all
+lt_cv_file_magic_cmd='$MAGIC_CMD'
+lt_cv_file_magic_test_file=
+lt_cv_ld_reload_flag=-r
+lt_cv_nm_interface='BSD nm'
+lt_cv_objdir=.libs
+lt_cv_path_LD=/usr/bin/ld
+lt_cv_path_NM='/usr/bin/nm -B'
+lt_cv_path_mainfest_tool=no
+lt_cv_prog_compiler_c_o=yes
+lt_cv_prog_compiler_pic='-fPIC -DPIC'
+lt_cv_prog_compiler_pic_works=yes
+lt_cv_prog_compiler_rtti_exceptions=no
+lt_cv_prog_compiler_static_works=yes
+lt_cv_prog_gnu_ld=yes
+lt_cv_sharedlib_from_linklib_cmd='printf %s\n'
+lt_cv_shlibpath_overrides_runpath=yes
+lt_cv_sys_global_symbol_pipe='sed -n -e '\''s/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p'\'' | sed '\''/ __gnu_lto/d'\'''
+lt_cv_sys_global_symbol_to_c_name_address='sed -n -e '\''s/^: \(.*\) .*$/  {"\1", (void *) 0},/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/  {"\1", (void *) \&\1},/p'\'''
+lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='sed -n -e '\''s/^: \(.*\) .*$/  {"\1", (void *) 0},/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(lib.*\)$/  {"\1", (void *) \&\1},/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/  {"lib\1", (void *) \&\1},/p'\'''
+lt_cv_sys_global_symbol_to_cdecl='sed -n -e '\''s/^T .* \(.*\)$/extern int \1();/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p'\'''
+lt_cv_sys_global_symbol_to_import=
+lt_cv_sys_max_cmd_len=1572864
+lt_cv_to_host_file_cmd=func_convert_file_noop
+lt_cv_to_tool_file_cmd=func_convert_file_noop
+lt_cv_truncate_bin='/usr/bin/dd bs=4096 count=1'
+pac_cv_func_decl_fsync=no
+pac_cv_func_decl_ftruncate=no
+pac_cv_func_decl_lseek64=yes
+pac_cv_func_decl_lstat=no
+pac_cv_func_decl_readlink=no
+pac_cv_func_decl_snprintf=no
+pac_cv_func_decl_strdup=no
+pac_cv_func_decl_usleep=no
+pac_cv_gnu_attr_format=yes
+pac_cv_gnu_attr_pure=yes
+pac_cv_have_statfs=yes
+pac_cv_have_statfs_f_fstypename=no
+pac_cv_int_hold_pointer=no
+pac_cv_prog_make_allows_comments=yes
+pac_cv_prog_make_found_clock_skew=no
+pac_cv_prog_make_include=yes
+pac_cv_prog_make_set_cflags=yes
+pac_cv_prog_make_vpath=VPATH
+pac_cv_struct_flock_and_mpi_offset=yes
 
 ## ----------------- ##
 ## Output variables. ##
@@ -1428,68 +2199,68 @@ BUILD_AD_XFS_TRUE='#'
 BUILD_AD_ZOIDFS_FALSE=''
 BUILD_AD_ZOIDFS_TRUE='#'
 BUILD_COVERAGE_FALSE=''
-BUILD_COVERAGE_TRUE=''
+BUILD_COVERAGE_TRUE='#'
 BUILD_F77_BINDINGS_FALSE=''
 BUILD_F77_BINDINGS_TRUE='#'
 BUILD_F77_TESTS_FALSE=''
 BUILD_F77_TESTS_TRUE='#'
 BUILD_GPFS_FALSE=''
-BUILD_GPFS_TRUE=''
+BUILD_GPFS_TRUE='#'
 BUILD_GRIDFTP_FALSE=''
-BUILD_GRIDFTP_TRUE=''
+BUILD_GRIDFTP_TRUE='#'
 BUILD_HFS_FALSE=''
-BUILD_HFS_TRUE=''
+BUILD_HFS_TRUE='#'
 BUILD_LUSTRE_FALSE=''
-BUILD_LUSTRE_TRUE=''
+BUILD_LUSTRE_TRUE='#'
 BUILD_MPIO_ERRHAN_FALSE=''
 BUILD_MPIO_ERRHAN_TRUE='#'
 BUILD_MPIO_REQUEST_FALSE=''
 BUILD_MPIO_REQUEST_TRUE='#'
 BUILD_MPI_ARRAY=''
 BUILD_MPI_INFO=''
-BUILD_NFS_FALSE=''
+BUILD_NFS_FALSE='#'
 BUILD_NFS_TRUE=''
 BUILD_NTFS_FALSE=''
-BUILD_NTFS_TRUE=''
+BUILD_NTFS_TRUE='#'
 BUILD_PANFS_FALSE=''
 BUILD_PANFS_OPEN6_FALSE=''
 BUILD_PANFS_OPEN6_TRUE='#'
-BUILD_PANFS_TRUE=''
+BUILD_PANFS_TRUE='#'
 BUILD_PFS_FALSE=''
-BUILD_PFS_TRUE=''
+BUILD_PFS_TRUE='#'
 BUILD_PIOFS_FALSE=''
-BUILD_PIOFS_TRUE=''
+BUILD_PIOFS_TRUE='#'
 BUILD_PROFILING_LIB_FALSE=''
 BUILD_PROFILING_LIB_TRUE='#'
 BUILD_PVFS2_FALSE=''
-BUILD_PVFS2_TRUE=''
+BUILD_PVFS2_TRUE='#'
 BUILD_PVFS_FALSE=''
-BUILD_PVFS_TRUE=''
+BUILD_PVFS_TRUE='#'
 BUILD_ROMIO_EMBEDDED_FALSE='#'
 BUILD_ROMIO_EMBEDDED_TRUE=''
 BUILD_SFS_FALSE=''
-BUILD_SFS_TRUE=''
-BUILD_TESTFS_FALSE=''
+BUILD_SFS_TRUE='#'
+BUILD_TESTFS_FALSE='#'
 BUILD_TESTFS_TRUE=''
-BUILD_UFS_FALSE=''
+BUILD_UFS_FALSE='#'
 BUILD_UFS_TRUE=''
 BUILD_XFS_FALSE=''
-BUILD_XFS_TRUE=''
+BUILD_XFS_TRUE='#'
 BUILD_ZOIDFS_FALSE=''
-BUILD_ZOIDFS_TRUE=''
+BUILD_ZOIDFS_TRUE='#'
 CC='gcc'
 CCDEPMODE='depmode=gcc3'
-CFLAGS='-O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__'
+CFLAGS='-O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -DHAVE_ROMIOCONF_H  -I$(top_builddir)/include'
 CPP='gcc -E'
 CPPFLAGS='-I/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/opal/mca/hwloc/hwloc201/hwloc/include   '
 CYGPATH_W='echo'
-DEFINE_HAVE_MPI_GREQUEST='#undef HAVE_MPI_GREQUEST'
-DEFINE_HAVE_MPI_GREQUEST_EXTENSIONS=''
+DEFINE_HAVE_MPI_GREQUEST='#define HAVE_MPI_GREQUEST 1'
+DEFINE_HAVE_MPI_GREQUEST_EXTENSIONS='#undef HAVE_MPI_GREQUEST_EXTENSIONS'
 DEFINE_MPI_OFFSET='typedef long long MPI_Offset;'
-DEFS=''
+DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
 DLLTOOL='false'
-DOCTEXT=''
+DOCTEXT='true'
 DSYMUTIL=''
 DUMPBIN=''
 ECHO_C=''
@@ -1507,16 +2278,16 @@ FCFLAGS=''
 FFLAGS=''
 FGREP='/usr/bin/grep -F'
 FILE_SYSTEM='testfs ufs nfs'
-FILE_SYS_DIRS=''
+FILE_SYS_DIRS=' adio/ad_testfs adio/ad_ufs adio/ad_nfs'
 FORTRAN_MPI_OFFSET='integer*8'
 FORTRAN_TEST=''
 FROM_LAM='no'
 FROM_MPICH='no'
 FROM_OMPI='yes'
 FTESTDEFINE=''
-GCOV=''
+GCOV='gcov'
 GREP='/usr/bin/grep'
-HAVE_MPI_DARRAY_SUBARRAY=''
+HAVE_MPI_DARRAY_SUBARRAY='#define HAVE_MPI_DARRAY_SUBARRAY'
 HAVE_MPI_INFO='#define HAVE_MPI_INFO'
 HAVE_WEAK_SYMBOLS='0'
 INSTALL_DATA='${INSTALL} -m 644'
@@ -1525,7 +2296,7 @@ INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
 LD='/usr/bin/ld -m elf_x86_64'
 LDFLAGS='  '
-LIBNAME=''
+LIBNAME='/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/ompi/mca/io/romio321/romio/lib/libmpio.a'
 LIBOBJS=''
 LIBS=''
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
@@ -1546,12 +2317,12 @@ MPIO_EXTRA_OBJECTS='get_errh.o set_errh.o'
 MPIO_EXTRA_REAL_POBJECTS='_get_errh.o _set_errh.o'
 MPIO_EXTRA_TMP_POBJECTS='get_errh.p set_errh.p'
 MPIO_GLUE_DEFAULT_FALSE=''
-MPIO_GLUE_DEFAULT_TRUE=''
+MPIO_GLUE_DEFAULT_TRUE='#'
 MPIO_GLUE_MPICH_FALSE=''
-MPIO_GLUE_MPICH_TRUE=''
-MPIO_GLUE_OPENMPI_FALSE=''
+MPIO_GLUE_MPICH_TRUE='#'
+MPIO_GLUE_OPENMPI_FALSE='#'
 MPIO_GLUE_OPENMPI_TRUE=''
-MPIRUN=''
+MPIRUN='mpirun'
 MPI_FARRAY1=''
 MPI_FARRAY2=''
 MPI_FARRAY3=''
@@ -1573,7 +2344,7 @@ NEEDS_MPI_FINT=''
 NM='/usr/bin/nm -B'
 NMEDIT=''
 NOF77='1'
-NOPROFILE='0'
+NOPROFILE='1'
 OBJDUMP='objdump'
 OBJEXT='o'
 OMPI_TOP_BUILDDIR='$(top_builddir)/../../../../..'
@@ -1602,11 +2373,11 @@ SET_MAKE='MAKE=make'
 SHELL='/bin/bash'
 STRIP='strip'
 SYSDEP_INC=''
-TEST_CC='gcc'
-TEST_F77=''
+TEST_CC='mpicc'
+TEST_F77='mpifort'
 TEST_LIBNAME=''
-USER_CFLAGS='-O3 -DNDEBUG -finline-functions -fno-strict-aliasing -mcx16 -pthread -D__EXTENSIONS__ -O'
-USER_FFLAGS=' -O'
+USER_CFLAGS=''
+USER_FFLAGS=''
 VERSION='Open MPI'
 VPATH='VPATH=.:${srcdir}'
 WITHIN_KNOWN_MPI_IMPL='yes'
@@ -1616,7 +2387,7 @@ ac_ct_DUMPBIN=''
 ac_ct_F77=''
 ac_ct_FC=''
 am__EXEEXT_FALSE=''
-am__EXEEXT_TRUE=''
+am__EXEEXT_TRUE='#'
 am__fastdepCC_FALSE='#'
 am__fastdepCC_TRUE=''
 am__include='include'
@@ -1637,7 +2408,7 @@ datadir='${datarootdir}'
 datarootdir='${prefix}/share'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
 dvidir='${docdir}'
-exec_prefix='NONE'
+exec_prefix='${prefix}'
 host='x86_64-unknown-linux-gnu'
 host_alias=''
 host_cpu='x86_64'
@@ -1652,18 +2423,18 @@ libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
 localstatedir='${prefix}/var'
 mandir='${datarootdir}/man'
-master_top_builddir=''
+master_top_builddir='/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/ompi/mca/io/romio321/romio'
 master_top_srcdir=''
-master_topbuild_dir=''
+master_topbuild_dir='/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/ompi/mca/io/romio321/romio'
 mkdir_p='$(MKDIR_P)'
 oldincludedir='/usr/include'
 pdfdir='${docdir}'
-prefix='NONE'
+prefix='/usr/local'
 program_transform_name='s,x,x,'
 psdir='${docdir}'
 sbindir='${exec_prefix}/sbin'
 sharedstatedir='${prefix}/com'
-srcdir='.'
+srcdir='/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/ompi/mca/io/romio321/romio'
 sysconfdir='${prefix}/etc'
 target_alias=''
 top_build_dir='/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/ompi/mca/io/romio321/romio'
@@ -1718,6 +2489,36 @@ top_build_dir='/workspace/OpenROAD-flow-scripts/tools/openmpi-4.0.1/ompi/mca/io/
 #define HAVE_SYS_VFS_H 1
 #define HAVE_SYS_PARAM_H 1
 #define HAVE_SYS_MOUNT_H 1
+#define HAVE_SYS_STATVFS_H 1
+#define HAVE_STATFS 1
+#define HAVE_STRUCT_STATFS 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_STAT 1
+#define HAVE_STAT 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_STATVFS_H 1
+#define HAVE_SYS_VFS_H 1
+#define HAVE_STATVFS 1
+#define HAVE_STATVFS 1
+#define HAVE_DECL_PWRITE 1
+#define HAVE_STRERROR 1
+#define HAVE_STATUS_SET_BYTES 1
+#define HAVE_MPI_DARRAY_SUBARRAY 1
+#define MPIO_BUILD_PROFILING 1
+#define HAVE_DECL_MPI_COMBINER_HINDEXED_BLOCK 1
+#define HAVE_MPIIO_CONST 1
+#define HAVE_STRDUP 1
+#define HAVE_SNPRINTF 1
+#define HAVE_LSTAT 1
+#define HAVE_READLINK 1
+#define HAVE_FSYNC 1
+#define HAVE_FTRUNCATE 1
+#define HAVE_LSEEK64 1
+#define NEEDS_LSEEK64_DECL 1
+#define HAVE_USLEEP 1
+#define restrict __restrict
+#define HAVE_GCC_ATTRIBUTE 1
 
-configure: caught signal 2
-configure: exit 1
+configure: exit 0

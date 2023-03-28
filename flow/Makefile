@@ -16,8 +16,8 @@
 # DESIGN_CONFIG=./designs/nangate45/swerv_wrapper/config.mk
 # DESIGN_CONFIG=./designs/nangate45/tiny-tests/config.mk
 # DESIGN_CONFIG=./designs/nangate45/tinyRocket/config.mk
-# DESIGN_CONFIG=./designs/asap7/inverter/config.mk
-DESIGN_CONFIG=./designs/asap7/bfly/config.mk
+DESIGN_CONFIG=./designs/asap7/inverter/config.mk
+# DESIGN_CONFIG=./designs/asap7/bfly/config.mk
 
 # DESIGN_CONFIG=./designs/tsmc65lp/aes/config.mk
 # DESIGN_CONFIG=./designs/tsmc65lp/ariane/config.mk
@@ -178,10 +178,10 @@ export FLOW_TUNE_stage ?= 1
 # Global setting for Synthesis
 export SYNTH_ARGS ?= -flatten
 
-# Global setting for Floorplan
+# Global setting for Floorsplan
 export PLACE_PINS_ARGS
 
-export FLOW_VARIANT ?= gua
+export FLOW_VARIANT ?= base
 
 export GPL_TIMING_DRIVEN ?= 1
 export GPL_ROUTABILITY_DRIVEN ?= 1
@@ -758,6 +758,8 @@ clean_finish:
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 
+clean_flowtune:
+	rm $(RESULTS_DIR)/0_0_yosys.blif $(RESULTS_DIR)/0_1_yosys.blif $(RESULTS_DIR)/flowtune.v
 
 
 # ==============================================================================
