@@ -45,11 +45,12 @@ do
 	echo -e "read internal.aig; source $design.script;strash;write internal.aig" | ./abc
 done
 
-cp internal.aig $design.ftune.aig
+cp internal.aig $DESIGN_NAME.aig
 RED='\033[0;31m'
 NC='\033[0m'
-echo -e "********************************************************\n${RED} Final design produced by FlowTune: $design.ftune.aig$NC\n********************************************************"
-echo -e "read_aiger $design.ftune.aig; write_verilog gua.v" | yosys
+echo -e "********************************************************\n${RED} Final design produced by FlowTune: $DESIGN_NAME.aig$NC\n********************************************************"
+echo -e "read_aiger $DESIGN_NAME.aig; strash; write_blif gua.blif" | abc
+echo -e "read_blif gua.blif; strash; write_verilog gua.v" | yosys
 rm internal.aig
 #rm result_all.log
 #echo $design >> result_all.log 

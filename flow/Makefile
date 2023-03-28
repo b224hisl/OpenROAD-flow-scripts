@@ -161,7 +161,7 @@ endif
 export RESYNTH_AREA_RECOVER ?= 0
 export RESYNTH_TIMING_RECOVER ?= 0
 export ABC_AREA ?= 1
-# By default, flowtune is not used for optimization, when abc_area=1, this value valid
+# By default, flowtune is not used for optimization
 export FLOW_TUNE ?= 1
 # r: Number of appearances of each synthesis command repeat
 export FLOW_TUNE_repeat ?= 1
@@ -379,9 +379,6 @@ $(WRAPPED_LIBS):
 	mkdir -p $(OBJECTS_DIR)/lib
 	sed 's/library(\(.*\))/library(\1_mod)/g' $(filter %$(notdir $(@:_mod.lib=.lib)),$(WRAP_LIBS)) | sed 's/cell(\(.*\))/cell(\1_mod)/g' > $@
 
-# ifeq ($(FLOW_TUNE),)
-#   OPENROAD_EXE           = $(abspath $(FLOW_HOME)/../tools/install/OpenROAD/bin/openroad)
-# endif
 
 # ==============================================================================
 #  ______   ___   _ _____ _   _ _____ ____ ___ ____
@@ -759,7 +756,7 @@ clean_finish:
 	rm -f  $(LOG_DIR)/6_*
 
 clean_flowtune:
-	rm $(RESULTS_DIR)/0_0_yosys.blif $(RESULTS_DIR)/0_1_yosys.blif $(RESULTS_DIR)/flowtune.v
+	rm $(RESULTS_DIR)/0_0_yosys.blif $(RESULTS_DIR)/0_1_yosys.blif $(RESULTS_DIR)/flowtune.blif
 
 
 # ==============================================================================

@@ -2,10 +2,9 @@ cp $RESULTS_DIR/0_1_yosys.blif $FLOWTUNE_DIR
 cp $SCRIPTS_DIR/flowtune.sh $FLOWTUNE_DIR/openroad_flowtune.sh
 cd $FLOWTUNE_DIR
 echo "you are in flowtune dir"
-# ./single_design.sh 0_1_yosys 0_1_yosys.blif $FLOW_TUNE_repeat $FLOW_TUNE_iteration $FLOW_TUNE_target $FLOW_TUNE_sample $FLOW_TUNE_stage
-./openroad_flowtune.sh 0_1_yosys 0_1_yosys.blif 1 1 0 1 1
+./openroad_flowtune.sh 0_1_yosys 0_1_yosys.blif $FLOW_TUNE_repeat $FLOW_TUNE_iteration $FLOW_TUNE_target $FLOW_TUNE_sample $FLOW_TUNE_stage
 cd -
 echo "returning to the previous dir"
 #rm $FLOWTUNE_DIR/0_1_yosys.ftune.aig
-cp $FLOWTUNE_DIR/gua.v $RESULTS_DIR/flowtune.v
+cp $FLOWTUNE_DIR/gua.blif $RESULTS_DIR/flowtune.blif
 echo "finish"

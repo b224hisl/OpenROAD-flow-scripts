@@ -6,15 +6,15 @@ if { [info exist ::env(SYNTH_HIERARCHICAL)] && $::env(SYNTH_HIERARCHICAL) == 1 &
 }
 
 # Generic synthesis
-synth  -top $::env(DESIGN_NAME) {*}$::env(SYNTH_ARGS) 
-puts "hello"
+synth  -top $::env(DESIGN_NAME) {*}$::env(SYNTH_ARGS)
 if {$::env(FLOW_TUNE)} {
+  puts "ENTERING FLOWTUNE PROCESS"
   write_blif  $::env(RESULTS_DIR)/0_0_yosys.blif 
 #  puts "begin blif transting"
   exec bash -f $::env(SCRIPTS_DIR)/abc_blif_trans.script
-  puts "h eheh"
   exec bash -f $::env(SCRIPTS_DIR)/flowtune.script
-  read_verilog $::env(RESULTS_DIR)/flowtune.v
+  delete $::env(DESIGN_NAME)
+  read_blif $::env(RESULTS_DIR)/flowtune.blif
 }
 
 if { [info exists ::env(USE_LSORACLE)] } {
@@ -117,3 +117,4 @@ tee -o $::env(REPORTS_DIR)/synth_stat.txt stat {*}$stat_libs
 
 # Write synthesized design
 write_verilog -noattr -noexpr -nohex -nodec $::env(RESULTS_DIR)/1_1_yosys.v
+write_blif $::env(RESULTS_DIR)/a.blif
