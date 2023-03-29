@@ -1,5 +1,5 @@
 # ORFS Workflow Optimization
-Our work mainly has two contributions:
+Our work mainly contains two contributions. For [detail information](./docs/openroad_contest.pdf)
  - We integrate [FlowTune](#FlowTune--orfs) into the OpenROAD Flow Script (ORFS);
  - We build a [Solution-inspiring error log system](#solution-inspiring-error-log-system).
 
