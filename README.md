@@ -101,7 +101,7 @@ When using electronic design automation (EDA) tools to harden designs, there are
 
 To alleviate these challenges, we have compiled a comprehensive list of common user problems that occur during OpenROAD program execution from the Github issue page. We have also summarized experience from Slack discussion groups and consulted with the software development team to help with deveoping the solution-inspiring error log system.
 
-We connected possible solution hints to common problems, such as detailed placement failure, high routing consensus, and LVS errors, with concise statements at the end of the log.
+We connected possible solution hints to common problems, such as detailed placement failure, high routing congestions, and LVS errors, with concise statements at the end of the log.
 
 Here shows two demo logs:
 - Fail in detail placement
