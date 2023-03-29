@@ -115,6 +115,7 @@ Here shows two demo logs:
 ### How to launch the system
 We have already implement this system in Openroad, which is a submodule of ORFS, just execute this script when building:
 ```
+git clone --recursive https://github.com/b224hisl/OpenROAD-flow-scripts.git
 ./build_openroad.sh --local
 ``` 
 It will atomatically clone our OpenROAD repertory (https://github.com/0616ygh/OpenROAD.git)
