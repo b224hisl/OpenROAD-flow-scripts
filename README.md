@@ -19,7 +19,7 @@ with 24-hour turnaround time.
 Due to time and many compatibility issues, we only used a small design to complete this process this time, so it is not obvious for actual optimization, but according to the introduction of this article itself, you can see that in Verilog-To -Routing (VTR), the optimization effect of this tool is as follows.
 ![alt](./docs/pic/data1.png)
 Post-routing evaluation with VTR (VPR PnR) as backend, with default VTR
-7.0 flow as baseline where logic synthesis is conducted on AIG logic optimization[$^5$](https://scholar.google.com/scholar_url?url=https://dl.acm.org/doi/abs/10.1145/2617593&hl=zh-CN&sa=T&oi=gsb&ct=res&cd=0&d=13314604487856416829&ei=PaUjZKuXIN-Cy9YPmNy0oA8&scisig=AJ9-iYvfVfNmVaLWdggN_D6cUTbo) The collected results include (a) total area including logic and routing area, (b) total routing wire length, (c) post-PnR total negative slacks (TNS), and (d) post-PnR critical path delay[$^3$](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/abstract/document/9916059/&hl=zh-CN&sa=T&oi=gsb&ct=res&cd=0&d=17216217603613571681&ei=gKUjZKzvDPqXy9YPy9SBoAs&scisig=AJ9-iYtE17YPgkDWQJQq5w2SkvGx)
+7.0 flow as baseline where logic synthesis is conducted on [AIG logic optimization](https://scholar.google.com/scholar_url?url=https://dl.acm.org/doi/abs/10.1145/2617593&hl=zh-CN&sa=T&oi=gsb&ct=res&cd=0&d=13314604487856416829&ei=PaUjZKuXIN-Cy9YPmNy0oA8&scisig=AJ9-iYvfVfNmVaLWdggN_D6cUTbo) The collected results include (a) total area including logic and routing area, (b) total routing wire length, (c) post-PnR total negative slacks (TNS), and (d) [post-PnR critical path delay](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/abstract/document/9916059/&hl=zh-CN&sa=T&oi=gsb&ct=res&cd=0&d=17216217603613571681&ei=gKUjZKzvDPqXy9YPy9SBoAs&scisig=AJ9-iYtE17YPgkDWQJQq5w2SkvGx)
 
 
 ### Install openroad with FlowTune
@@ -82,7 +82,7 @@ After that you could use `make` to execute the OpenRoad Flow with FlowTune. Then
 ![alt](./docs/pic/pic3.png) 
 
 Note that you can use `make clean_FlowTune` to clear the intermediate files of FlowTune generated in the process, and use `make clean_all` to clear all files in the process
-### Limitationss
+### Limitations
 FlowTune is a parameter tuning framework that supports various optimization modes for Boolean logic optimization. Currently, the framework supports AIG optimization which we have add this tool into the ORFS, but it also offers FPGA optimization and technology mapping after synthesis. However, during the technology mapping phase, we encountered missing files in the imported ASAP7 library, as demonstrated in the code.
 ```
 abc 01> read /workspace/0penROAD-flow-scripts/flow/results/asap7/gcd/base/output.blif
