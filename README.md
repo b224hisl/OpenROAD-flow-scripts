@@ -6,10 +6,6 @@ Our work mainly contains two contributions. For [detail information](./docs/open
 ### FlowTune + ORFS
 We integrate [FlowTune](https://github.com/Yu-Utah/FlowTune) into the ORFS, with a primary focus on utilization during the ABC stage to achieve enhanced AIG reduction during synthesis. We conducted integration and validation on a small design prior to technology mapping, successfully completing the main process. 
 
-We have learned about the main user issues on Github, consulted the experience of the Slack discussion group and the software development team, and combined our experience to explore the design of the solution-inspiring error log system.
-
-We have read the source code of various components of OpenROAD and found the location of error log output under different steps. We have connected possible solutions to some common problems (such as: detailed placement failed; routing consensus too high; LVS error, etc.) with concise statements at the end of the log.
-
 FlowTune is a light-weight reinforcement learning solution to synthesis. This work proposes a high-performance, domain-specific multi-stage multi-armed bandit framework for Boolean logic optimization called FlowTune. The framework takes advantage of domain-specific knowledge of DAG-aware synthesis algorithms to optimize standard-cell technology mapping and end-to-end PnR assessment using various backend tools. FlowTune outperforms prior works in terms of optimization efficiency and runtime, and it is the first framework that shows end-to-end synthesis experiments in terms of post-PnR performance indicators. The domain-specific MAB algorithm can be applied to a variety of DAG-based logic synthesis, with FlowTune being used for both AIG and MIG improvements.
 
 OpenROAD Flow is a full RTL-to-GDS flow built entirely on open-source tools.
@@ -101,9 +97,11 @@ FlowTune offers several different modes of operation, including:
 Moving forward, we plan to add support for all modes of operation in OpenROAD. we will collaborate with FlowTune and OpenROAD to incorporate more excellent features into ORFS and improve its compatibility and support for different modes.
 
 ## Solution-inspiring error log system
-There are many common problems when using EDA tools to harden designs. Quickly resolving these issues will accelerate layout generation. However, for most beginners and designers, this is not an easy task: they need to check the EDA tool manual or load the design database with GUI to find the problem.
+When using electronic design automation (EDA) tools to harden designs, there are numerous issues. Efficiently addressing these problems can significantly expedite layout generation. However, for novices and designers, such tasks can be challenging, as they may need to consult EDA tool manuals or utilize graphical user interfaces to locate the cause of the issue.
 
-Therefore, to alleviate the issues, we gather a comprehensive list of common user problems that arise during OpenROAD program execution on the Github issue page. We have embedded hints for solutions in the error logs, which serve to inspire users and provide more direct debugging assistance, as well as a better understanding of the tool.
+To alleviate these challenges, we have compiled a comprehensive list of common user problems that occur during OpenROAD program execution from the Github issue page. We have also summarized experience from Slack discussion groups and consulted with the software development team to help with deveoping the solution-inspiring error log system.
+
+We connected possible solution hints to common problems, such as detailed placement failure, high routing consensus, and LVS errors, with concise statements at the end of the log.
 
 Here shows two demo logs:
 - Fail in detail placement
