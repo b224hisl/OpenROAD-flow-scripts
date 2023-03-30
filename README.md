@@ -1,6 +1,8 @@
 # ORFS Workflow Optimization
 Our work mainly contains two contributions. For [detail information](./docs/openroad_contest.pdf)
+ For Performance 
  - We integrate [FlowTune](#FlowTune--orfs) into the OpenROAD Flow Script (ORFS);
+ For Runtime
  - We build a [Solution-inspiring error log system](#solution-inspiring-error-log-system).
 
 ### FlowTune + ORFS
