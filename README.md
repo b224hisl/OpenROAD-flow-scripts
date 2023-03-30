@@ -85,22 +85,27 @@ After that you could use `make` to execute the OpenRoad Flow with FlowTune. Then
 
 Note that you can use `make clean_FlowTune` to clear the intermediate files of FlowTune generated in the process, and use `make clean_all` to clear all files in the process
 ### Limitations
-FlowTune is a parameter tuning framework that supports various optimization modes for Boolean logic optimization. Currently, the framework supports AIG optimization which we have add this tool into the ORFS, but it also offers FPGA optimization and technology mapping after synthesis. However, during the technology mapping phase, we encountered missing files in the imported ASAP7 library, as demonstrated in the code.
+FlowTune is a parameter tuning framework that supports various optimization modes for Boolean logic optimization. Currently, the framework supports AIG optimization which we have add this tool into the ORFS, but it also offers timing/area optimization after technology mapping. However, during the technology mapping phase, we encountered missing files in the imported ASAP7 library, as demonstrated in the code.
 ```
 abc 01> read /workspace/0penROAD-flow-scripts/flow/results/asap7/gcd/base/output.blif
 Line 10: Cannot find the model for subcircuit XOR2x2 ASAP7 75t R.Reading network from file has failed.
 ```
+even afer 'dfflibmap', it will reports:
+```
+abc 01> read /workspace/0penROAD-flow-scripts/flow/results/asap7/gcd/base/output.blif
+Line 10: Cannot find gate "DFFHQNx1_ASAP7_75t_R" in the library. Reading network from file has failed.
+```
 
 In addition, for complex designs that generate cells that cannot be recognized by Yosys, the framework may have difficulty during technology mapping before synthesis. 
 
-FlowTune offers several different modes of operation, including:
+FlowTune offers other different modes of operation, including:
 
 - AIG Minimization Mode: Minimizing the number of AIG nodes or levels.
 - Technology Mapping Mode: Mapping Boolean logic onto a target technology library using logic synthesis， optimization, and mapping techniques.
 - FPGA Mapping Mode: Mapping Boolean logic onto FPGA resources to achieve minimum area or delay.
 - SAT Minimization Mode: Minimizing the number of clauses or literals in the Boolean formula.
 
-Moving forward, we plan to add support for all modes of operation in OpenROAD. we will collaborate with FlowTune and OpenROAD to incorporate more excellent features into ORFS and improve its compatibility and support for different modes.
+Moving forward, we plan to add support for all modes of operation in OpenROAD. we will collaborate with FlowTune and OpenROAD to incorporate more excellent features into ORFS and improve its compatibility.
 
 ## Solution-inspiring error log system
 When using electronic design automation (EDA) tools to harden designs, there are numerous issues. Efficiently addressing these problems can significantly expedite layout generation. However, for novices and designers, such tasks can be challenging, as they may need to consult EDA tool manuals or utilize graphical user interfaces to locate the cause of the issue.
